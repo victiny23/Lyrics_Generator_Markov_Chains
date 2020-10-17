@@ -1,0 +1,59 @@
+#form {
+    font-family: 'sans-serif';
+    font-size: 20px;
+}
+
+/* search input frame */
+#search {
+    padding: 6px 40px;
+    border-radius: 5px;
+    margin-top: 20px;
+    font-size: 28px;
+}
+
+/* submit button */
+#submit {
+    color: white; /* font color */
+    background-color: #af7acf; /* button color */
+    padding: 8px 24px; /* button size */
+    border-radius: 5px; /* button corner */
+    margin-top: 20px;
+    font-size: 30px;
+}
+
+#lyrics {
+background-color: #aed6f1;
+padding: 0px; /* no padding when there is no lyrics to show */
+border: 2px solid #2e86c1;
+border-radius: 5px;
+margin: 40px; /* left, right margin */
+}
+
+body {
+    text-align: center;
+    background-color: #17202a;
+    font-family: 'Avenir Next', serif;
+    font-weight: normal;
+    line-height: 60px;
+}
+
+h1 {
+    color: #00ff7f;
+    font-size: 45px;
+    margin: 0;
+    font-weight: bold;
+}
+
+h6 {
+    color: #00ff7f;
+    font-size: 25px;
+    margin: 0;
+    font-weight: normal;
+}
+
+p {
+    color: #17202a;
+    font-size: 25px;
+    font-weight: normal;
+    line-height: 20px;
+}

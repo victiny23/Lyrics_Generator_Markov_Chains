@@ -9,23 +9,31 @@ class MarkovLyrics:
             }
         """
         self.chain = {}
+        self.initial_words = []
 
     def populate_markov_chain(self, lyrics):
         for line in lyrics:
             words = line.split(" ")
-
+            # add the first word of the line to the list of initial words
+            if words[0] != "NEWLINE" and words[0] not in self.initial_words:
+                self.initial_words.append(words[0])
             for i in range(len(words)-1):
                 word = words[i]
+                # add the first word of the new line to the list of initial words
+                if word == "NEWLINE" and words[i+1] not in self.initial_words:
+                    self.initial_words.append(words[i+1])
+                # extend the chain
                 if word in self.chain:
                     next_word = words[i+1]
                     self.chain[word].append(next_word)
+                # add a new chain
                 else:
                     next_word = words[i+1]
                     self.chain[word] = [next_word]
         # print(self.chain)
     def generate_lyrics(self, length=500):
-        n = len(self.chain)
-
+        # pick a random word from the list of initial words
+        n = len(self.initial_words)
         start_index = randint(0, n-1)
         keys = list(self.chain.keys())
         current_word = keys[start_index].title()
@@ -47,7 +55,7 @@ class MarkovLyrics:
         return lyrics
 
 
-"""
+""" test
 data = ["I am Victiny", "I am a student", "I like to code", "I play basketball"]
 m = MarkovLyrics()
 m.populate_markov_chain(data)

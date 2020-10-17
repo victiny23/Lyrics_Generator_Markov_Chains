@@ -3,7 +3,6 @@ import requests
 from bs4 import BeautifulSoup
 import re
 
-
 def get_access_token():
     config = configparser.ConfigParser()
     config.read('config.ini')
@@ -100,7 +99,7 @@ def scrape_lyrics_text(name):
         current_lyrics = []
         for p_tag in p_tags:
             # replace new line symbol with space
-            text = p_tag.text.replace("\n", " ")
+            text = p_tag.text.replace("\n", " NEWLINE ")
             # remove (, )
             text = text.replace("(", "")
             text = text.replace(")", "")
