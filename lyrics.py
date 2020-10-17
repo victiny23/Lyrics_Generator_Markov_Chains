@@ -1,7 +1,6 @@
 import configparser
 import requests
 from bs4 import BeautifulSoup
-import re
 
 def get_access_token():
     config = configparser.ConfigParser()
